@@ -7,7 +7,7 @@ class Game{
         this.baseHeight = 720;
         this.ratio = this.height / this.baseHeight;
         this.player = new Player(this);
-
+        this.gravity = 1;
         this.resize(window.innerWidth, window.innerHeight);
 
         window.addEventListener("resize", e =>{
@@ -19,9 +19,9 @@ class Game{
         this.canvas.height = height;
         this.ctx.fillStyle = 'red';
         this.width = this.canvas.width;
-        this.height = this.canvas.innerHeight;
+        this.height = this.canvas.height;
         this.ratio = this.height / this.baseHeight;
-        
+
         console.log(this.height, this.baseHeight, this.ratio);
         this.player.resize();
     }
