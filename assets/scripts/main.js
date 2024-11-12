@@ -6,10 +6,18 @@ class Game{
         this.height = this.canvas.height;
         this.player = new Player(this);
 
-        window.addEventListener("resize", function(e){
-            console.log(e)
+        this.resize(window.innerWidth, window.innerHeight);
+
+        window.addEventListener("resize", e =>{
+          this.resize(e.currentTarget.innerWidth, e.currentTarget.innerHeight);
         })
     };
+    resize(width, height){
+        this.canvas.width = width;
+        this.canvas.height = height;
+        this.width = this.canvas.width;
+        this.height = this.canvas.innerHeight;
+    }
     render(){
         this.ctx.fillStyle = 'red';
         this.player.update()
